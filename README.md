@@ -3,7 +3,7 @@
 docker pull ibmcom/db2
 
 
-## .env_list
+## env_list
 - LICENSE accepts the terms and conditions of the Db2 software contained in this image
 - DB2INSTANCE specifies the Db2 instance name
 - DB2INST1_PASSWORD specifies the password of the Db2 instance
@@ -19,3 +19,8 @@ docker pull ibmcom/db2
 - ETCD_ENDPOINT specifies your own provided ETCD key-value store. Enter your endpoints with a comma (and no space) as the delimiter. This environment variable is required if HADR_ENABLED is set to true
 - ETCD_USERNAME specifies the username credential for ETCD. If left empty, it will use your Db2 instance
 - ETCD_PASSWORD specifies the password credential for ETCD. If left empty, it will use your Db2 instance password
+
+```
+docker run -h db2server --name db2server --restart=always --detach --privileged=true 
+-p 50000:50000 --env-file .env_list -v /Docker:/database ibmcom/db2
+```
