@@ -29,4 +29,4 @@ docker run -h db2server --name db2server --restart=always --detach --privileged=
 docker run -d -h db2server --name db2server --rm --privileged=true -p 50000:50000 --env-file .env_list ibmcom/db2
 ```
 ```
-docker exec -it db2server /bin/bash
+docker exec -i -t db2server /bin/bash
